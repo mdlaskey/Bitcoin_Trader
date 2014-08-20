@@ -2,6 +2,7 @@ import IPython
 import json 
 
 
+
 class Markets: 
 	def __init__(self,market):
 		self.m_key = market 
