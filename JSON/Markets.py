@@ -1,5 +1,6 @@
 import IPython
 import json 
+import numpy as np
 
 
 
@@ -14,10 +15,14 @@ class Markets:
 		else: 
 			return 0; 
 
-
+		price = np.zeros((2,1))
 		for i in range(0,len(m_list)):
 			
 			if(self.m_key == m_list[i].get('label')):
 
-				return m_list[i].get('marketid')
+				price[0,0] = float(m_list[i].get('low_trade'))
+				price[1,0] = float(m_list[i].get('high_trade'))
+
+
+				return m_list[i].get('marketid'),price
 
